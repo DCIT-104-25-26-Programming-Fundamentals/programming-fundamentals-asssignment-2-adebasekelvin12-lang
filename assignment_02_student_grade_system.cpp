@@ -43,6 +43,45 @@
 // YOUR CODE BELOW — remove the // symbols from the scaffold and fill it in
 // =============================================================================
 
-#include <iostream>
+#include  <iostream>
+
 using namespace std;
 
+#include <iostream>
+
+char getGrade(int score) {
+    // Validate score is within [0, 100]
+    if (score < 0 || score > 100) {
+        return '\0';
+    }
+    
+    if (score >= 80) {
+        return 'A';
+    } else if (score >= 70) {
+        return 'B';
+    } else if (score >= 60) {
+        return 'C';
+    } else if (score >= 50) {
+        return 'D';
+    } else {
+        return 'F';
+    }
+}
+
+int main() {
+    int score;
+
+    
+    std::cout << "Enter student score (0-100): ";
+    std::cin >> score;
+
+    char grade = getGrade(score);
+
+    if (grade == '\0') {
+        std::cout << "Error: Score must be between 0 and 100." << std::endl;
+    } else {
+        std::cout << "Grade: " << grade << std::endl;
+    }
+
+    return 0;
+}
